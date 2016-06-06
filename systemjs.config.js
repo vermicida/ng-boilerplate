@@ -1,5 +1,5 @@
 
-(function(global) {
+(function() {
 
     var map = {
         "app": "app",
@@ -42,18 +42,10 @@
     });
 
     var config = {
-        transpiler: "typescript",
-        typescriptOptions: {
-            emitDecoratorMetadata: true
-        },
         map: map,
         packages: packages
     };
 
-    if (global.filterSystemConfig) {
-        global.filterSystemConfig(config);
-    }
-
     System.config(config);
 
-})(this);
+})();

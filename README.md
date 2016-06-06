@@ -23,7 +23,7 @@ $ npm install
 
 Finally, run the server:
 ```bash
-$ npm run go
+$ npm start
 ```
 
 And that's all. You're ready to start coding.

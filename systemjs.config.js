@@ -1,7 +1,6 @@
 
 (function() {
 
-    // Default SystemJS config.
     var config = {
         map: {
             "app": "app",
@@ -16,14 +15,10 @@
         }
     };
 
-    // Sets the package loader.
     var setPackageLoader = System.packageWithIndex
-        // Individual files (~300 requests).
         ? function(pkg) { config.packages["@angular/" + pkg] = { main: "index.js", defaultExtension: "js" }; }
-        // Bundled (~40 requests).
         : function(pkg) { config.packages["@angular/" + pkg] = { main: "/bundles/" + pkg + ".umd.js", defaultExtension: "js" }; };
     
-    // Adds the Angular packages loaders.
     ["common",
      "compiler",
      "core",
@@ -35,7 +30,6 @@
      "router-deprecated",
      "upgrade"].forEach(setPackageLoader);
 
-     // Pass the generated config to SystemJS.
-     System.config(config);
+    System.config(config);
 
 })();

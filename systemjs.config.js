@@ -1,51 +1,41 @@
 
 (function() {
 
-    var map = {
-        "app": "app",
-        "rxjs": "node_modules/rxjs",
-        "angular2-in-memory-web-api": "node_modules/angular2-in-memory-web-api",
-        "@angular": "node_modules/@angular"
-    };
-
-    var packages = {
-        "app": {
-            main: "main.js",
-            defaultExtension: "js"
+    // Default SystemJS config.
+    var config = {
+        map: {
+            "app": "app",
+            "@angular": "node_modules/@angular",
+            "angular2-in-memory-web-api": "node_modules/angular2-in-memory-web-api",
+            "rxjs": "node_modules/rxjs"
         },
-        "rxjs": {
-            defaultExtension: "js"
-        },
-        "angular2-in-memory-web-api": {
-            defaultExtension: "js"
+        packages: {
+            "app": { main: "main.js", defaultExtension: "js" },
+            "angular2-in-memory-web-api": { main: "index.js", defaultExtension: "js" },
+            "rxjs": { defaultExtension: "js" }
         }
     };
 
-    var packageNames = [
-        "@angular/common",
-        "@angular/compiler",
-        "@angular/core",
-        "@angular/http",
-        "@angular/platform-browser",
-        "@angular/platform-browser-dynamic",
-        "@angular/router",
-        "@angular/router-deprecated",
-        "@angular/testing",
-        "@angular/upgrade"
-    ];
+    // Sets the package loader.
+    var setPackageLoader = System.packageWithIndex
+        // Individual files (~300 requests).
+        ? function(pkg) { config.packages["@angular/" + pkg] = { main: "index.js", defaultExtension: "js" }; }
+        // Bundled (~40 requests).
+        : function(pkg) { config.packages["@angular/" + pkg] = { main: "/bundles/" + pkg + ".umd.js", defaultExtension: "js" }; };
+    
+    // Adds the Angular packages loaders.
+    ["common",
+     "compiler",
+     "core",
+     "forms",
+     "http",
+     "platform-browser",
+     "platform-browser-dynamic",
+     "router",
+     "router-deprecated",
+     "upgrade"].forEach(setPackageLoader);
 
-    packageNames.forEach(function(pkgName) {
-        packages[pkgName] = {
-            main: "index.js",
-            defaultExtension: "js"
-        };
-    });
-
-    var config = {
-        map: map,
-        packages: packages
-    };
-
-    System.config(config);
+     // Pass the generated config to SystemJS.
+     System.config(config);
 
 })();

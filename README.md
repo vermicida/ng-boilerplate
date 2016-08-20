@@ -19,6 +19,7 @@ $ rm .gitignore
 Then, install the dependencies:
 ```bash
 $ npm install
+$ npm run typings install
 ```
 
 Finally, run the server:

@@ -4,7 +4,7 @@
       "npm:": "node_modules/"
     },
     map: {
-      app: "app",
+      app: "out",
       "@angular/core": "npm:@angular/core/bundles/core.umd.js",
       "@angular/common": "npm:@angular/common/bundles/common.umd.js",
       "@angular/compiler": "npm:@angular/compiler/bundles/compiler.umd.js",
@@ -14,7 +14,7 @@
       "@angular/router": "npm:@angular/router/bundles/router.umd.js",
       "@angular/forms": "npm:@angular/forms/bundles/forms.umd.js",
       "rxjs": "npm:rxjs",
-      "angular2-in-memory-web-api": "npm:angular2-in-memory-web-api"
+      "angular-in-memory-web-api": "npm:angular-in-memory-web-api"
     },
     packages: {
       app: {
@@ -24,7 +24,7 @@
       rxjs: {
         defaultExtension: "js"
       },
-      "angular2-in-memory-web-api": {
+      "angular-in-memory-web-api": {
         main: "./index.js",
         defaultExtension: "js"
       }

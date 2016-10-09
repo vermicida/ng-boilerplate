@@ -1,5 +1,4 @@
-app/*.js
-app/*.map
+out
 node_modules
 npm-debug.log
 typings

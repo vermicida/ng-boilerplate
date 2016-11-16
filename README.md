@@ -1,7 +1,7 @@
 
 # ng2-boilerplate
 
-This is just an Angular 2 boilerplate. It is updated to work with **2.1.1**.
+This is just an Angular 2 boilerplate. It is updated to work with **2.2.0**.
 
 ## Getting started
 

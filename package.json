@@ -1,53 +1,54 @@
 {
-    "name": "ng2-boilerplate",
-    "version": "2.4.0",
-    "description": "This is just an Angular 2 boilerplate.",
+    "name": "ng-boilerplate",
+    "version": "4.0.0",
+    "description": "This is just an Angular boilerplate.",
     "author": {
         "name": "Diego Herrera",
         "email": "vermicida@gmail.com"
     },
-    "homepage": "https://github.com/vermicida/ng2-boilerplate#readme",
+    "homepage": "https://github.com/vermicida/ng-boilerplate#readme",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/vermicida/ng2-boilerplate.git"
+        "url": "git+https://github.com/vermicida/ng-boilerplate.git"
     },
     "bugs": {
-        "url": "https://github.com/vermicida/ng2-boilerplate/issues"
+        "url": "https://github.com/vermicida/ng-boilerplate/issues"
     },
     "scripts": {
-        "start": "tsc && concurrently \"tsc -w\" \"lite-server\"",
-        "lite": "lite-server",
-        "tsc": "tsc",
-        "tsc:w": "tsc -w",
+        "build": "tsc -p .",
+        "build:watch": "tsc -p . -w",
+        "serve": "lite-server",
+        "prestart": "npm run build",
+        "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
         "clean": "rm -rf ./out"
     },
     "keywords": [
         "angular",
         "angujar2",
+        "angular4",
         "boilerplate",
         "scaffolding"
     ],
     "dependencies": {
-        "@angular/common": "~2.4.0",
-        "@angular/compiler": "~2.4.0",
-        "@angular/core": "~2.4.0",
-        "@angular/forms": "~2.4.0",
-        "@angular/http": "~2.4.0",
-        "@angular/platform-browser": "~2.4.0",
-        "@angular/platform-browser-dynamic": "~2.4.0",
-        "@angular/router": "~3.4.0",
-        "angular-in-memory-web-api": "~0.2.2",
+        "@angular/common": "~4.0.0",
+        "@angular/compiler": "~4.0.0",
+        "@angular/core": "~4.0.0",
+        "@angular/forms": "~4.0.0",
+        "@angular/http": "~4.0.0",
+        "@angular/platform-browser": "~4.0.0",
+        "@angular/platform-browser-dynamic": "~4.0.0",
+        "@angular/router": "~4.0.0",
+        "angular-in-memory-web-api": "~0.3.0",
         "systemjs": "0.19.40",
         "core-js": "^2.4.1",
-        "reflect-metadata": "^0.1.8",
         "rxjs": "5.0.1",
-        "zone.js": "^0.7.4"
+        "zone.js": "^0.8.4"
     },
     "devDependencies": {
         "@types/node": "^6.0.46",
-        "concurrently": "^3.1.0",
+        "concurrently": "^3.2.0",
         "lite-server": "^2.2.2",
-        "typescript": "~2.0.10"
+        "typescript": "~2.1.0"
     }
 }

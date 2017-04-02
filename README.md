@@ -1,7 +1,7 @@
 
 # ng2-boilerplate
 
-This is just an Angular 2 boilerplate. It is updated to work with **2.4.0**.
+This is just an Angular boilerplate. It is updated to work with the version **4.0.0**.
 
 ## Getting started
 
@@ -13,7 +13,7 @@ You can use [nginit](https://github.com/vermicida/nginit), a CLI util that clone
 
 To use the boilerplate you must clone this repo first:
 ```bash
-$ git clone https://github.com/vermicida/ng2-boilerplate.git
+$ git clone https://github.com/vermicida/ng-boilerplate.git
 ```
 
 Remember to remove all the Git files:

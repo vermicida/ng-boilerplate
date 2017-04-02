@@ -1,5 +1,5 @@
 
-# ng2-boilerplate
+# ng-boilerplate
 
 This is just an Angular boilerplate. It is updated to work with the version **4.0.0**.
 
